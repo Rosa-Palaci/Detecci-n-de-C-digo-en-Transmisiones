@@ -2,40 +2,48 @@
 
 ## Descripción
 
-**Actividad Integradora 1: Análisis y Diseño de Algoritmos Avanzados (TC2038)**
+Este programa tiene como propósito analizar y detectar posibles códigos maliciosos dentro de archivos de transmisión. Utiliza tres archivos que contienen secuencias maliciosas y dos archivos que simulan transmisiones de datos para verificar si las secuencias maliciosas están presentes. Además, busca palíndromos dentro de las transmisiones y analiza la similitud entre los archivos de transmisión.
 
-Esta actividad tiene como propósito analizar y detectar posibles códigos maliciosos en archivos de transmisión. Se busca identificar patrones y secuencias específicas que indiquen la presencia de estos códigos y se generará un reporte detallado de los hallazgos.
+## Funcionalidades
 
-## Subcompetencias a Evaluar
+1. **Detección de Códigos Maliciosos**:
+   - Verifica si las secuencias de los archivos `mcode1.txt`, `mcode2.txt`, y `mcode3.txt` están presentes en `transmission1.txt` y `transmission2.txt`.
+   - Muestra `true` o `false` según si la secuencia está contenida en los archivos de transmisión.
 
-Con la entrega de esta actividad, se busca evidenciar las siguientes subcompetencias:
+2. **Búsqueda de Palíndromos**:
+   - Detecta el palíndromo más largo en `transmission1.txt` y `transmission2.txt` y muestra las posiciones de inicio y fin de cada uno.
 
-- **SICT0101**: Explicación y modelado de sistemas computacionales y sus interacciones.
-- **SICT0401**: Aplicación de estándares y normas relevantes en el dominio del problema.
-- **STC0101**: Implementación de algoritmos confiables y correctos para solucionar problemas.
-- **STC0102**: Optimización de algoritmos robustos y eficientes para el desarrollo de soluciones.
+3. **Análisis de Similitud**:
+   - Encuentra el substring más largo común entre `transmission1.txt` y `transmission2.txt` y muestra las posiciones de inicio y fin en `transmission1.txt`.
 
-## Especificaciones de la Evidencia
+## Entrada
 
-### Requisitos de Entrada
+El programa no requiere interacción del usuario. Los archivos que deben existir en la misma ruta de ejecución son:
 
-- Los archivos que se deben analizar son: `transmission1.txt`, `transmission2.txt`, `mcode1.txt`, `mcode2.txt`, y `mcode3.txt`. Estos deben existir en la misma ruta donde se ejecuta el programa.
+- `transmission1.txt`
+- `transmission2.txt`
+- `mcode1.txt`
+- `mcode2.txt`
+- `mcode3.txt`
 
-### Funcionalidades del Programa
+Estos archivos contienen exclusivamente caracteres entre `0-9`, `A-F`, y saltos de línea.
 
-1. **Detección de Códigos Maliciosos**: El programa busca coincidencias entre el archivo `mcode1.txt` (que contiene posibles códigos maliciosos) y los archivos de transmisión.
-2. **Búsqueda de Palíndromos**: Dada la naturaleza "espejeada" de algunos códigos maliciosos, el programa busca secuencias palíndromas dentro de los archivos de transmisión.
-3. **Análisis de Similitud**: El programa compara y analiza similitudes entre combinaciones de los archivos de transmisión.
+## Salida
 
-### Salida
+El programa mostrará en consola:
 
-El programa genera un archivo llamado `checking.txt` que contiene:
-- Cantidad de incidencias de cada posible código malicioso en los archivos de transmisión y sus posiciones.
-- Subsecuencia del código con un caracter menos del original más encontrado.
-- El palíndromo más largo de cada archivo de transmisión y su posición.
-- Substrings más largos entre las combinaciones de los archivos de transmisión.
+1. **Parte 1**: Para cada archivo de transmisión, indicará si contiene o no las secuencias de los archivos de código malicioso.
+   - (true | false) para cada combinación de archivo de transmisión y archivo de código malicioso.
+   
+2. **Parte 2**: La posición de inicio y final del palíndromo más largo en cada archivo de transmisión.
+   - Formato: `posiciónInicial posiciónFinal` para `transmission1.txt` y `transmission2.txt`.
 
-### Ejecución
+3. **Parte 3**: La posición de inicio y final del substring común más largo entre ambos archivos de transmisión, mostrado respecto a `transmission1.txt`.
+   - Formato: `posiciónInicial posiciónFinal`.
+
+## Ejecución
+
+Para ejecutar el programa, solo necesitas asegurarte de que los archivos mencionados existan en la misma carpeta de ejecución. Luego, ejecuta el archivo de Python con:
 
 ```bash
-$ ./nombre_del_programa
+$ python nombre_del_programa.py
