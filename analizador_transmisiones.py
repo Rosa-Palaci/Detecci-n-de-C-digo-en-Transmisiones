@@ -1,5 +1,3 @@
-from typing import List, Tuple
-
 def read_file(file_path: str) -> str:
     """
     Lee el contenido de un archivo de texto y lo devuelve como una cadena.
@@ -11,9 +9,9 @@ def read_file(file_path: str) -> str:
     - Una cadena que contiene el contenido del archivo.
     """
     with open(file_path, 'r') as file:
-        return file.read().strip()
+        return file.read()
 
-def compute_lps(pat: str) -> List[int]:
+def compute_lps(pat: str) -> list[int]:
     """
     Calcula la tabla LPS (Longest Prefix Suffix) para el patrón.
     
@@ -89,7 +87,7 @@ def contains_code(transmission: str, code: str) -> bool:
     """
     return kmp_search(transmission, code)
 
-def manacher(s: str) -> Tuple[int, int]:
+def manacher(s: str) -> tuple[int, int]:
     """
     Implementa el algoritmo de Manacher para encontrar el palíndromo más largo en una cadena.
     
@@ -137,7 +135,7 @@ def manacher(s: str) -> Tuple[int, int]:
     # Retornar las posiciones 1-indexed
     return start + 1, end + 1
 
-def longest_common_substring(s1: str, s2: str) -> Tuple[int, int]:
+def longest_common_substring(s1: str, s2: str) -> tuple[int, int]:
     """
     Encuentra el substring común más largo entre dos cadenas.
 
