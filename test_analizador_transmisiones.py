@@ -1,4 +1,3 @@
-import pytest
 from analizador_transmisiones import contains_code, manacher, longest_common_substring
 
 # Pruebas para la función contains_code usando KMP
