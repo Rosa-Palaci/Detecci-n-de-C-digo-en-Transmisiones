@@ -46,4 +46,4 @@ El programa mostrará en consola:
 Para ejecutar el programa, solo necesitas asegurarte de que los archivos mencionados existan en la misma carpeta de ejecución. Luego, ejecuta el archivo de Python con:
 
 ```bash
-$ python nombre_del_programa.py
+$ python analizador_transmisiones.py
